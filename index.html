@@ -19,6 +19,20 @@
 {"@context":"https://schema.org","@type":"Person","name":"Dhan Emmanuel V. Amiscua","jobTitle":"Marketing Associate, Creative Content & Design","email":"mailto:dhan.amiscua04@gmail.com","address":{"@type":"PostalAddress","addressRegion":"Bulacan","addressCountry":"PH"},"alumniOf":"Colegio De San Gabriel Arcangel, Inc.","worksFor":{"@type":"Organization","name":"Milkyway Control & Power Services Corp."},"sameAs":["https://www.linkedin.com/in/dhan-amiscua-121759450"],"knowsAbout":["Graphic design","Branding","Social media graphics","Presentation design","Website UI design","Virtual assistance"]}
 </script>
 <style>
+  .work-preview video,
+#m-prev video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+#m-prev video {
+  max-height: 500px;
+  background: #000;
+}
+
+  
 /* Layout: one long editorial scroll. Oversized display type, design-tool details (artboard, selection box, crop marks, swatches) as the recurring motif. Red appears only on marks, active states and the primary action. */
 :root{
   --bg:#FFFFFF; --bg-2:#F5F5F5; --fg:#111111; --muted:#5D5A5B;
@@ -690,10 +704,24 @@ var PROJECTS = [
     return '<button type="button" class="f" data-cat="' + c + '" aria-pressed="' + (c === 'all') + '">' + (c === 'all' ? 'All' : CATS[c]) + '</button>';
   }).join('');
 
-  var previewHTML = function (p) {
-    return p.img ? '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">'
-      : '<span class="ph">' + ico(p.icon) + '<span class="ph-tag">Placeholder · your work goes here</span></span>';
-  };
+  
+var previewHTML = function (p, isModal) {
+  if (p.video) {
+    return '<video src="' + p.video + '" ' +
+      (isModal
+        ? 'controls playsinline preload="metadata"'
+        : 'muted autoplay loop playsinline preload="metadata"') +
+      '></video>';
+  }
+
+  if (p.img) {
+    return '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">';
+  }
+
+  return '<span class="ph">' + ico(p.icon) +
+    '<span class="ph-tag">Placeholder · your work goes here</span></span>';
+};
+
   $('#work-grid').innerHTML = PROJECTS.map(function (p) {
     return '<button type="button" class="work" data-id="' + p.id + '" data-cat="' + p.cat + '"><span class="work-preview">' + previewHTML(p) + '<span class="work-more">View details</span></span><span><span class="work-cat">' + CATS[p.cat] + '</span><span class="work-title">' + p.title + '</span><span class="work-blurb">' + p.blurb + '</span></span></button>';
   }).join('');
@@ -714,7 +742,7 @@ var PROJECTS = [
   var dlg = $('#modal'), pos = 0, lastTrigger = null;
   var visible = function () { return PROJECTS.filter(function (p) { return active === 'all' || p.cat === active; }); };
   function fillModal(p) {
-    $('#m-prev').innerHTML = previewHTML(p);
+    $('#m-prev').innerHTML = previewHTML(p, true);
     $('#m-cat').textContent = CATS[p.cat];
     $('#m-title').textContent = p.title;
     $('#m-desc').textContent = p.desc;
