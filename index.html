@@ -594,37 +594,97 @@ footer{padding-block:2rem calc(2rem + env(safe-area-inset-bottom,0px));border-to
 
   /* To replace a placeholder: set `img` to an image path or data URI. The card and the detail view switch automatically. */
   var PROJECTS = [
-    { id: 'social', cat: 'social', icon: 'social', img: 'images/image.jpg', title: 'Social Media Graphics',
-      blurb: 'Feed posts and campaign graphics for company social channels.',
-      desc: 'A slot for social media graphics. Making these is part of my day-to-day work in the Marketing Associate role.',
-      items: ['Social media graphics', 'Event-related creative content', 'Marketing materials for digital channels'],
-      tools: ['Canva', 'Photoshop', 'Figma'] },
-    { id: 'print', cat: 'print', icon: 'design', img: '', title: 'Posters, Banners & Brochures',
-      blurb: 'Printed and promotional pieces that carry a clear message.',
-      desc: 'A slot for print and promotional layouts, the kind of material I design for company marketing and events.',
-      items: ['Posters and banners', 'Brochures', 'Layouts that stay on brand'],
-      tools: ['Photoshop', 'Canva', 'Figma'] },
-    { id: 'brand', cat: 'brand', icon: 'brand', img: '', title: 'Logo & Brand Assets',
-      blurb: 'Logos and visual assets that keep a brand consistent.',
-      desc: 'A slot for logo and brand asset work. I develop company branding materials while keeping everything consistent.',
-      items: ['Logos', 'Visual assets and brand materials', 'Consistency across formats'],
-      tools: ['Photoshop', 'Canva', 'Figma'] },
-    { id: 'pres', cat: 'pres', icon: 'pres', img: '', title: 'Corporate Presentations',
-      blurb: 'Presentations and marketing documents for business use.',
-      desc: 'A slot for corporate presentation design and marketing documents.',
-      items: ['Corporate presentations', 'Company marketing documents', 'Layout and structure'],
-      tools: ['Canva', 'Microsoft 365', 'Google Workspace'] },
-    { id: 'web', cat: 'web', icon: 'web', img: '', title: 'Website UI Design',
-      blurb: 'Interface layouts and website content updates.',
-      desc: 'A slot for website UI work. I assist with website UI design and updates and manage website content.',
-      items: ['Website UI design', 'Website content and updates', 'Front-end skills for building pages'],
-      tools: ['Figma', 'HTML', 'CSS', 'JavaScript', 'React.js'] },
-    { id: 'media', cat: 'media', icon: 'media', img: '', title: 'Photo & Video Editing',
-      blurb: 'Edited photos and short video content for social and marketing use.',
-      desc: 'A slot for photo and video editing. I assist with photography, video editing and social media content development.',
-      items: ['Photo editing', 'Video editing', 'Content for social media'],
-      tools: ['Photoshop', 'Lightroom', 'CapCut', 'DaVinci'] }
-  ];
+  {
+    id: 'social',
+    cat: 'social',
+    icon: 'social',
+    img: 'images/image.jpg',
+    title: 'Social Media Graphics',
+    blurb: 'Creative social media designs and engaging marketing visuals for digital platforms.',
+    desc: 'I create visually appealing social media graphics and promotional materials that help communicate brand messages, promote events, and strengthen online presence.',
+    items: [
+      'Social media posts and promotional graphics',
+      'Event announcements and campaign creatives',
+      'Branded marketing materials for digital platforms'
+    ],
+    tools: ['Canva', 'Photoshop', 'Figma']
+  },
+  {
+    id: 'print',
+    cat: 'print',
+    icon: 'design',
+    img: '',
+    title: 'Posters, Banners & Brochures',
+    blurb: 'Professional print designs and promotional materials aligned with brand identity.',
+    desc: 'I design print and promotional materials that communicate information clearly while maintaining a consistent and professional visual identity.',
+    items: [
+      'Posters and promotional banners',
+      'Brochures and marketing materials',
+      'Brand-consistent layouts and designs'
+    ],
+    tools: ['Photoshop', 'Canva', 'Figma']
+  },
+  {
+    id: 'brand',
+    cat: 'brand',
+    icon: 'brand',
+    img: '',
+    title: 'Logo & Brand Assets',
+    blurb: 'Visual branding elements that create a consistent and recognizable brand identity.',
+    desc: 'I develop and organize visual branding materials, helping maintain consistency across different marketing platforms and company communications.',
+    items: [
+      'Logo and branding concepts',
+      'Visual assets and brand materials',
+      'Consistent brand elements across formats'
+    ],
+    tools: ['Photoshop', 'Canva', 'Figma']
+  },
+  {
+    id: 'pres',
+    cat: 'pres',
+    icon: 'pres',
+    img: '',
+    title: 'Corporate Presentations',
+    blurb: 'Well-structured business presentations and professional marketing documents.',
+    desc: 'I create clean, organized, and visually engaging presentations and business documents designed to communicate information effectively.',
+    items: [
+      'Corporate and business presentations',
+      'Company profiles and marketing documents',
+      'Professional layouts and information organization'
+    ],
+    tools: ['Canva', 'Microsoft 365', 'Google Workspace']
+  },
+  {
+    id: 'web',
+    cat: 'web',
+    icon: 'web',
+    img: '',
+    title: 'Website UI Design',
+    blurb: 'User-friendly website layouts, interface designs, and website content management.',
+    desc: 'I work on website interface design, content updates, and front-end development to create functional and visually appealing web experiences.',
+    items: [
+      'Website UI and page layouts',
+      'Website content management and updates',
+      'Front-end website development'
+    ],
+    tools: ['Figma', 'HTML', 'CSS', 'JavaScript', 'React.js']
+  },
+  {
+    id: 'media',
+    cat: 'media',
+    icon: 'media',
+    img: '',
+    title: 'Photo & Video Editing',
+    blurb: 'Creative photo enhancements and engaging video content for digital marketing.',
+    desc: 'I edit photos and videos for marketing and social media, focusing on visual quality, storytelling, and engaging content.',
+    items: [
+      'Photo enhancement and editing',
+      'Short-form video editing',
+      'Social media and promotional video content'
+    ],
+    tools: ['Photoshop', 'Lightroom', 'CapCut', 'DaVinci Resolve']
+  }
+];
 
   /* ---------- helpers ---------- */
   var $ = function (s, r) { return (r || document).querySelector(s); };
